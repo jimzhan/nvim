@@ -1,0 +1,7 @@
+autoload
+exts
+plug.vim
+plugins
+exts
+tmp
+.init.vim-rplugin~
