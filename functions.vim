@@ -169,30 +169,12 @@ function! config.InitializePlugins()
     let g:config.plugins.initialized = 0
   endif
 
-  call plug#begin(expand('~/.config/nvim/exts'))
+  call plug#begin(expand('~/.config/nvim/plugins'))
   source ~/.config/nvim/plugins.vim
   call plug#end()
 
   if g:config.plugins.initialized == 0
     :PlugInstall
-  endif
-endfunction
-
-function! config.InitializePluginsForDein()
-  if !isdirectory(expand('~/.config/nvim/repos'))
-    echo "[*] Installing dein.vim...\n"
-    silent !curl -s https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh | sh -s $HOME/.config/nvim
-  endif
-
-  set runtimepath^=~/.config/nvim/repos/github.com/Shougo/dein.vim
-
-  call dein#begin(expand('~/.config/nvim'))
-    source ~/.config/nvim/plugins.vim
-  call dein#end()
-  filetype plugin indent on
-
-  if dein#check_install()
-    call dein#install()
   endif
 endfunction
 
@@ -202,7 +184,7 @@ function! config.SyntasticESlintChecker()
   let l:eslint = 'eslint'
 
   if executable('npm')
-      let l:npm_bin = split(system('npm bin'), '\n')[0]
+    let l:npm_bin = split(system('npm bin'), '\n')[0]
   endif
 
   if strlen(l:npm_bin) && executable(l:npm_bin . '/eslint')
