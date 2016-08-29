@@ -73,10 +73,9 @@ if !has('nvim')
 end
 
 highlight clear SignColumn              " SignColumn should match background
-highlight clear LineNr                  " Current line number row will have same background color in relative mode
 highlight clear CursorLineNr            " Remove highlight color from current line number
+highlight ColorColumn ctermbg=7         " Custom Colored Column
 highlight ExtraWhitespace ctermbg=166   " Highlight extra whitespace in specific color
-highlight ColorColumn ctermbg=7
 
 
 " ---------------------------------------------------------------------------
