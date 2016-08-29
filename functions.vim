@@ -17,7 +17,7 @@
 " ---------------------------------------------------------------------------
 "   Platforms
 " ---------------------------------------------------------------------------
-" Identify platform {
+" Identify platform {{{
 silent function! IsMac()
   return has('macunix')
 endfunction
@@ -29,7 +29,7 @@ endfunction
 silent function! IsWindows()
   return  (has('win32') || has('win64'))
 endfunction
-" }
+" }}}
 
 
 " ---------------------------------------------------------------------------
@@ -65,30 +65,6 @@ function! config.Initialize()
       exec "set " . settingname . "=" . directory
     endif
   endfor
-
-  " ------------------------------------------------------------
-  " Windows Compatible
-  " ---------------------------------------------------------------------------
-  " On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
-  " across (heterogeneous) systems easier.
-  if has('win32') || has('win64')
-    set runtimepath=$HOME/.nvim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.nvim/after
-    " Be nice and check for multi_byte even if the config requires
-    " multi_byte support most of the time
-    if has("multi_byte")
-      " Windows cmd.exe still uses cp850. If Windows ever moved to
-      " Powershell as the primary terminal, this would be utf-8
-      set termencoding=cp850
-      " Let Vim use utf-8 internally, because many scripts require this
-      set encoding=utf-8
-      setglobal fileencoding=utf-8
-      " Windows has traditionally used cp1252, so it's probably wise to
-      " fallback into cp1252 instead of eg. iso-8859-15.
-      " Newer Windows files might contain utf-8 or utf-16 LE so we might
-      " want to try them first.
-      set fileencodings=ucs-bom,utf-8,utf-16le,cp1252,iso-8859-15,chinese,euc-jp,gb18030,gbk,big5,latin1
-    endif
-  endif
 endfunction
 
 
@@ -122,21 +98,21 @@ endfunction
 
 " Shell command
 function! s:RunShellCommand(cmdline)
-    botright new
+  botright new
 
-    setlocal buftype=nofile
-    setlocal bufhidden=delete
-    setlocal nobuflisted
-    setlocal noswapfile
-    setlocal nowrap
-    setlocal filetype=shell
-    setlocal syntax=shell
+  setlocal buftype=nofile
+  setlocal bufhidden=delete
+  setlocal nobuflisted
+  setlocal noswapfile
+  setlocal nowrap
+  setlocal filetype=shell
+  setlocal syntax=shell
 
-    call setline(1, a:cmdline)
-    call setline(2, substitute(a:cmdline, '.', '=', 'g'))
-    execute 'silent $read !' . escape(a:cmdline, '%#')
-    setlocal nomodifiable
-    1
+  call setline(1, a:cmdline)
+  call setline(2, substitute(a:cmdline, '.', '=', 'g'))
+  execute 'silent $read !' . escape(a:cmdline, '%#')
+  setlocal nomodifiable
+  1
 endfunction
 
 " e.g. Grep current file for <search_term>: Shell grep -Hn <search_term> %
@@ -158,25 +134,6 @@ function! config.log(msg, ...)
     call s:append_log_file(msg)
 endfunction
 
-
-" ---------------------------------------------------------------------------
-"  Plugin Manager: Initialize dein.vim to manage plugins.
-" ---------------------------------------------------------------------------
-function! config.InitializePlugins()
-  if !filereadable(expand('$HOME/.config/nvim/autoload/plug.vim'))
-    echo "[*] Installing vim-plug...\n"
-    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    let g:config.plugins.initialized = 0
-  endif
-
-  call plug#begin(expand('~/.config/nvim/plugins'))
-  source ~/.config/nvim/plugins.vim
-  call plug#end()
-
-  if g:config.plugins.initialized == 0
-    :PlugInstall
-  endif
-endfunction
 
 " ---------------------------------------------------------------------------
 function! config.SyntasticESlintChecker()
@@ -201,9 +158,3 @@ function! config.ResetSyntasticColors()
         \' ctermbg=' . synIDattr(synIDtrans(hlID('SignColumn')), 'bg', 'cterm')
 endfunction
 " ---------------------------------------------------------------------------
-
-
-" ---------------------------------------------------------------------------
-"  Setup:
-" ---------------------------------------------------------------------------
-call config.Initialize()
