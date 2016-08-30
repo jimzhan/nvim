@@ -37,6 +37,7 @@ runtime! ext/nerdtree.vim
 
 runtime! ext/editor.vim
 runtime! ext/neomake.vim
+runtime! ext/deoplete.vim
 
 
 " ---------------------------------------------------------------------------
