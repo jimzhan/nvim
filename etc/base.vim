@@ -1,12 +1,3 @@
-" ---------------------------------------------------------------------------
-"  Settings
-" ---------------------------------------------------------------------------
-let g:config = {}
-let g:config.root = $HOME . "/.config/nvim"
-let g:config.tempdir = g:config.root . "tmp/"
-let g:config.plugins = {}
-let g:config.plugins.initialized = 1
-
 if has('persistent_undo')
   set undofile
   set undodir=~/.vim/.undo
@@ -46,7 +37,8 @@ set mouse=a  " Mouse in all modes
 " ---------------------------------------------------------------------------
 "  User Interface
 " ---------------------------------------------------------------------------
-set background=dark             " Assume a dark background
+syntax enable
+set background=dark
 set nu             " Line numbers on
 set nowrap         " Line wrapping off
 set cmdheight=1    " Make the command area two lines high
@@ -84,7 +76,6 @@ highlight ExtraWhitespace ctermbg=166   " Highlight extra whitespace in specific
 set ignorecase
 set smartcase  " Non-case sensitive search
 set hlsearch
-set wildignore+=.final_builds/*,*/node_modules/*,*.o,*.obj,*.exe,*.so,*.dll,*.pyc,.svn,.hg,.bzr,.git,.sass-cache,*.class,*.scssc,*/Godeps/*
 if executable('ack')
   set grepprg=ack\ --nogroup\ --column\ --smart-case\ --nocolor\ --follow\ $*
   set grepformat=%f:%l:%c:%m
@@ -94,3 +85,4 @@ if executable('ag')
   set grepformat=%f:%l:%c:%m
 endif
 set noshowmatch " Disable jumping to matching bracket when typing
+set wildignore+=.final_builds/*,*/node_modules/*,*.o,*.obj,*.exe,*.so,*.dll,*.pyc,.svn,.hg,.bzr,.git,.sass-cache,*.class,*.scssc,*/Godeps/*

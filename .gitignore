@@ -1,7 +1,7 @@
 autoload
-exts
 plug.vim
 plugins
+pluggins
 exts
 tmp
 .init.vim-rplugin~
