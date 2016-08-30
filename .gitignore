@@ -4,4 +4,5 @@ plugins
 pluggins
 exts
 tmp
+.undo
 .init.vim-rplugin~
