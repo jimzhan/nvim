@@ -21,6 +21,7 @@ Plug 'mattn/emmet-vim' "{
   \}
   let g:user_emmet_expandabbr_key="<C-e>"
 "}
+Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors' "{
 Plug 'ntpeters/vim-better-whitespace' "{
   let g:better_whitespace_enabled = 1
