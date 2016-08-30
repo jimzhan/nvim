@@ -39,6 +39,8 @@ runtime! ext/editor.vim
 runtime! ext/neomake.vim
 runtime! ext/deoplete.vim
 
+runtime! ext/java.vim
+
 
 " ---------------------------------------------------------------------------
 call plug#end()

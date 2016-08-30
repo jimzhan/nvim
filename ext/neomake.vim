@@ -19,7 +19,7 @@ Plug 'neomake/neomake' "{{{
   autocmd FileType javascript :call NeomakeESlintChecker()
   " open list automatically but preserve cursor position
   let g:neomake_open_list = 2
-  let g:neomake_list_height = 7
+  let g:neomake_list_height = 1
 
   autocmd! BufWinEnter,BufWritePost * Neomake
 "}}}
