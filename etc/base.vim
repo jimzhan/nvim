@@ -1,6 +1,6 @@
 if has('persistent_undo')
   set undofile
-  set undodir=~/.vim/.undo
+  set undodir=~/.config/nvim/.undo
 endif
 
 " ---------------------------------------------------------------------------
@@ -67,7 +67,7 @@ end
 highlight clear SignColumn              " SignColumn should match background
 highlight clear CursorLineNr            " Remove highlight color from current line number
 highlight ColorColumn ctermbg=7         " Custom Colored Column
-highlight ExtraWhitespace ctermbg=166   " Highlight extra whitespace in specific color
+highlight ExtraWhitespace ctermbg=7   " Highlight extra whitespace in specific color
 
 
 " ---------------------------------------------------------------------------

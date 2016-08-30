@@ -8,23 +8,30 @@
 " ---------------------------------------------------------------------------
 Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
+Plug 'scrooloose/nerdcommenter'
+Plug 'terryma/vim-multiple-cursors'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'godlygeek/tabular' "{
+
+Plug 'godlygeek/tabular' "{{{
   nmap <Leader>a= :Tabularize /=<CR>
   vmap <Leader>a= :Tabularize /=<CR>
   nmap <Leader>a: :Tabularize /:\zs<CR>
   vmap <Leader>a: :Tabularize /:\zs<CR>
-"}
-Plug 'mattn/emmet-vim' "{
+"}}}
+"
+Plug 'mattn/emmet-vim' "{{{
   let g:user_emmet_settings = {
   \    'indentation' : '  '
   \}
   let g:user_emmet_expandabbr_key="<C-e>"
-"}
-Plug 'scrooloose/nerdcommenter'
-Plug 'terryma/vim-multiple-cursors' "{
-Plug 'ntpeters/vim-better-whitespace' "{
+"}}}
+"
+Plug 'ntpeters/vim-better-whitespace' "{{{
   let g:better_whitespace_enabled = 1
   let g:better_whitespace_filetypes_blacklist=['vimfiler']
-  highlight ExtraWhitespace ctermbg=7
-"}
+"}}}
+
+Plug 'mbbill/undotree' "{{{
+  let g:undotree_WindowLayout = 4
+  nnoremap <Leader>u :UndotreeToggle<cr>
+"}}}
