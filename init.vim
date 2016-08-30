@@ -35,6 +35,8 @@ runtime! ext/theme.vim
 runtime! ext/fzf.vim
 runtime! ext/nerdtree.vim
 
+runtime! ext/editor.vim
+
 
 " ---------------------------------------------------------------------------
 call plug#end()
