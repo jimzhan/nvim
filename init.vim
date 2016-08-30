@@ -36,6 +36,7 @@ runtime! ext/fzf.vim
 runtime! ext/nerdtree.vim
 
 runtime! ext/editor.vim
+runtime! ext/neomake.vim
 
 
 " ---------------------------------------------------------------------------
