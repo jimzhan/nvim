@@ -6,6 +6,7 @@
 "   * AutoPairs: Insert or delete brackets, parens, quotes in pair.
 "   * Multiple Curosr: Multiple selection/editing like Sublime Text.
 " ---------------------------------------------------------------------------
+Plug 'moll/vim-bbye'
 Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdcommenter'
