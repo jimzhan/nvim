@@ -33,5 +33,5 @@ map  <Leader>x "+x
 map  <Leader>p "+p
 
 if has('nvim')
-  cmap sh terminal  " Use consistent way to call out the shell
+  nmap <leader>sh :terminal<CR>
 endif
