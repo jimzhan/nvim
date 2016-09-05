@@ -1,3 +1,4 @@
+Plug 'airblade/vim-rooter'
 Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
 
 map <leader>b :Bookmark<CR>
