@@ -31,15 +31,14 @@ call plug#begin(expand('$HOME/.config/nvim/plugins'))
 " Plugins: Settings
 " ---------------------------------------------------------------------------
 runtime! ext/theme.vim
-
-runtime! ext/fzf.vim
-runtime! ext/nerdtree.vim
+runtime! ext/java.vim
 
 runtime! ext/editor.vim
 runtime! ext/neomake.vim
 runtime! ext/deoplete.vim
 
-runtime! ext/java.vim
+runtime! ext/fzf.vim
+runtime! ext/vimfiler.vim
 
 
 " ---------------------------------------------------------------------------

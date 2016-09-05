@@ -29,4 +29,4 @@ autocmd FileType NERDTree nmap <buffer> <silent><Leader>d   m-d
 autocmd FileType NERDTree nmap <buffer> <silent><Leader>n   m-a
 autocmd FileType NERDTree nmap <buffer> <silent><Leader>c   m-c
 autocmd FileType NERDTree nmap <buffer> <silent><Leader>m   m-m
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
