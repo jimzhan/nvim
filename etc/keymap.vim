@@ -31,3 +31,7 @@ nmap <leader>9 :set foldlevel=9<CR>
 vmap <Leader>y "+y
 map  <Leader>x "+x
 map  <Leader>p "+p
+
+if has('nvim')
+  cmap sh terminal  " Use consistent way to call out the shell
+endif
