@@ -1,4 +1,5 @@
 Plug 'Shougo/vimfiler.vim' | Plug 'Shougo/unite.vim' "{{{
+  hi cursorline guibg=\#333333     " highlight bg color of current
   let g:vimfiler_enable_auto_cd = 1
   let g:vimfiler_enable_clipboard = 0
   let g:vimfiler_as_default_explorer = 1
@@ -18,6 +19,7 @@ Plug 'Shougo/vimfiler.vim' | Plug 'Shougo/unite.vim' "{{{
 
   autocmd FileType vimfiler setlocal nonumber
   autocmd FileType vimfiler setlocal norelativenumber
+  autocmd FileType vimfiler setlocal cursorline
   autocmd FileType vimfiler nunmap <buffer> <C-l>
   autocmd FileType vimfiler nunmap <buffer> <S-m>
   autocmd FileType vimfiler nmap <buffer> r   <Plug>(vimfiler_redraw_screen)

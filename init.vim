@@ -37,6 +37,7 @@ runtime! ext/editor.vim
 runtime! ext/neomake.vim
 runtime! ext/deoplete.vim
 
+runtime! ext/ack.vim
 runtime! ext/fzf.vim
 runtime! ext/vimfiler.vim
 

@@ -65,7 +65,7 @@ if !has('nvim')
 end
 
 highlight clear SignColumn              " SignColumn should match background
-highlight clear CursorLineNr            " Remove highlight color from current line number
+"highlight clear CursorLineNr            " Remove highlight color from current line number
 highlight ColorColumn ctermbg=7         " Custom Colored Column
 highlight ExtraWhitespace ctermbg=7   " Highlight extra whitespace in specific color
 
