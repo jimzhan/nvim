@@ -3,9 +3,8 @@ Plug 'Shougo/vimfiler.vim' | Plug 'Shougo/unite.vim' "{{{
   let g:vimfiler_enable_clipboard = 0
   let g:vimfiler_as_default_explorer = 1
   let g:vimfiler_safe_mode_by_default = 0
-  let g:vimfiler_ignore_pattern = '\%(.DS_Store\|.pyc\|.git\w*\|.sw\w*\|.hg\|.svn\)$'
-  let g:vimfiler_data_directory =  g:dotvim.tempdir . "vimfiler"
   let g:vimfiler_force_overwrite_statusline = 0
+  let g:vimfiler_data_directory =  g:dotvim.tempdir . "vimfiler"
 
   let g:vimfiler_tree_leaf_icon = ''
   let g:vimfiler_tree_opened_icon = '▾'
