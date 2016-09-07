@@ -42,4 +42,3 @@ Plug 'scrooloose/syntastic' "{
 
   autocmd FileType javascript :call SyntasticESlintChecker()
 "}
-

@@ -34,7 +34,7 @@ runtime! ext/theme.vim
 runtime! ext/java.vim
 
 runtime! ext/editor.vim
-runtime! ext/neomake.vim
+runtime! ext/syntastic.vim
 runtime! ext/deoplete.vim
 
 runtime! ext/ack.vim
@@ -53,3 +53,4 @@ endif
 " called only after plugins initialized.
 " ---------------------------------------------------------------------------
 colorscheme base16-solarized-dark
+call ResetSyntasticColors()
