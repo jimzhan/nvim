@@ -4,7 +4,7 @@ set nocompatible
 " ---------------------------------------------------------------------------
 let g:dotvim = {}
 let g:dotvim.root = $HOME . "/.config/nvim"
-let g:dotvim.tempdir = g:dotvim.root . "tmp/"
+let g:dotvim.tempdir = g:dotvim.root . "/tmp/"
 
 let g:dotvim.plugins = {}
 let g:dotvim.plugins.initialized = 1
@@ -38,7 +38,7 @@ runtime! ext/syntastic.vim
 runtime! ext/deoplete.vim
 
 runtime! ext/ack.vim
-runtime! ext/fzf.vim
+runtime! ext/ctrlp.vim
 runtime! ext/vimfiler.vim
 
 
