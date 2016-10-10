@@ -1,19 +1,39 @@
 Plug 'kien/ctrlp.vim'
 
 let g:ctrlp_working_path_mode = 'ra'
-
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-
+nnoremap <silent> <D-t> :CtrlP<CR>
+nnoremap <silent> <D-r> :CtrlPMRU<CR>
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn|node_modules)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
-let g:ctrlp_reuse_window = 'startify'
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$',
+    \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
+
+if executable('ag')
+    let s:ctrlp_fallback = 'ag %s --nocolor -l -g ""'
+elseif executable('ack-grep')
+    let s:ctrlp_fallback = 'ack-grep %s --nocolor -f'
+elseif executable('ack')
+    let s:ctrlp_fallback = 'ack %s --nocolor -f'
+" On Windows use "dir" as fallback command.
+elseif WINDOWS()
+    let s:ctrlp_fallback = 'dir %s /-n /b /s /a-d'
+else
+    let s:ctrlp_fallback = 'find %s -type f'
+endif
+if exists("g:ctrlp_user_command")
+    unlet g:ctrlp_user_command
+endif
+
 let g:ctrlp_user_command = {
-  \ 'types': {
-    \ 1: ['.git', 'git ls-files --cached --others --exclude-standard %s'],
-  \ },
-  \ 'fallback': 'ag %s --ignore-case --nocolor --nogroup --nobreak --ignore "\.git$\|\.hg$\|\.svn$" -g "" %s'
+    \ 'types': {
+        \ 1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others'],
+        \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+    \ },
+    \ 'fallback': s:ctrlp_fallback
 \ }
+
+let g:ctrlp_prompt_mappings = {
+    \ 'PrtSelectMove("j")':   ['<c-j>', '<c-n>'],
+    \ 'PrtSelectMove("k")':   ['<c-k>', '<c-p>'],
+    \ 'PrtHistory(-1)':       ['<down>'],
+    \ 'PrtHistory(1)':        ['<up>'],
+    \ }
