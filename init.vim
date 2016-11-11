@@ -32,6 +32,7 @@ call plug#begin(expand('$HOME/.config/nvim/plugins'))
 " ---------------------------------------------------------------------------
 runtime! ext/theme.vim
 runtime! ext/java.vim
+runtime! ext/golang.vim
 
 runtime! ext/editor.vim
 runtime! ext/syntastic.vim
