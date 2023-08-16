@@ -28,6 +28,9 @@ return {
         show_on_dirs = true,
         show_on_open_dirs = true,
       },
+      filters = {
+        dotfiles = true,
+      }
     }    
   end
 }
