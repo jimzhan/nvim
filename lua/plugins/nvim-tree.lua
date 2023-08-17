@@ -30,6 +30,10 @@ return {
       },
       filters = {
         dotfiles = true,
+      },
+      sort_by = "case_sensitive",
+      view = {
+        adaptive_size = true,
       }
     }    
   end
