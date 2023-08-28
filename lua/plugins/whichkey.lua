@@ -1,1 +1,0 @@
--- @FIXME - conflict with nvim-tree,

@@ -35,6 +35,6 @@ return {
       view = {
         adaptive_size = true,
       }
-    }    
+    }
   end
 }

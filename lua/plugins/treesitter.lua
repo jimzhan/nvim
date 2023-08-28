@@ -6,7 +6,6 @@ return {
         enable = true,
         disable = {},
       },
-      auto_install = true,
       ensure_installed = {
         'lua',
         'java',
