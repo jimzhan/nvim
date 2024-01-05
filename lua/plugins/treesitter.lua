@@ -12,6 +12,7 @@ return {
         'javascript',
         'markdown',
         'markdown_inline',
+        'python',
         'regex'
       },
       sync_install = false,
