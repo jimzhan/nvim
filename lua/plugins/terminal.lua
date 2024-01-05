@@ -1,28 +1,28 @@
 return {
   'akinsho/toggleterm.nvim',
   config = function()
-    require("toggleterm").setup({
+    require('toggleterm').setup({
       highlights = {
         Normal = {
-          link = "Normal",
+          link = 'Normal',
         },
         NormalFloat = {
-          link = "Normal",
+          link = 'Normal',
         },
         FloatBorder = {
-          link = "FloatBorder",
+          link = 'FloatBorder',
         },
         SignColumn = {
-          link = "EndOfBuffer",
+          link = 'EndOfBuffer',
         },
         EndOfBuffer = {
-          link = "EndOfBuffer",
+          link = 'EndOfBuffer',
         },
       },
       persist_size = true,
       persist_mode = true,
       autochdir = true,
     })
-    --vim.keymap.set("n", "<leader>t", "<cmd>ToggleTerm size=8 direction=horizontal<cr>")
+    --vim.keymap.set('n', '<leader>t', '<cmd>ToggleTerm size=8 direction=horizontal<cr>')
   end
 }

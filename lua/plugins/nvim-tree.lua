@@ -5,7 +5,7 @@ return {
   },
 
   keys = {
-    { "<C-o>", ":NvimTreeToggle<CR>", desc = "Toggle tree" },
+    { '<C-o>', ':NvimTreeToggle<CR>', desc = 'Toggle tree' },
   },
 
   config = function ()
@@ -31,7 +31,7 @@ return {
       filters = {
         dotfiles = true,
       },
-      sort_by = "case_sensitive",
+      sort_by = 'case_sensitive',
       view = {
         adaptive_size = true,
       }
