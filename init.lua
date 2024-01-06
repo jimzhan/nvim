@@ -3,7 +3,7 @@
 -----------------------------
 require 'config.base'
 require 'config.keymap'
-require 'config.pkg'
+require 'config.plugin'
 -----------------------------
 -- Color theme
 -----------------------------
