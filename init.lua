@@ -1,6 +1,10 @@
--- bootstrap lazy.nvim, LazyVim and plugins
+-----------------------------
+-- bootstrap
+-----------------------------
 require 'config.base'
 require 'config.keymap'
-require 'config.lazy'
+require 'config.pkg'
+-----------------------------
 -- Color theme
+-----------------------------
 require 'onedark'.load()
