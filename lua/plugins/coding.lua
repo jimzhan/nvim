@@ -13,11 +13,23 @@ return {
   },
 
   config = function()
-    local lsp_zero = require('lsp-zero')
+    local zero = require('lsp-zero')
 
-    lsp_zero.on_attach(function(client, bufnr)
-      lsp_zero.default_keymaps({buffer = bufnr})
+    zero.on_attach(function(client, buffer)
+      zero.default_keymaps({buffer = buffer})
     end)
+
+    zero.format_on_save({
+      format_opts = {
+        async = false,
+        timeout_ms = 10000,
+      },
+      servers = {
+        ['tsserver'] = { 'javascript', 'typescript' },
+        ['pyright'] = { 'python' },
+        ['kotlin_language_server'] = { 'kotlin' }
+      }
+    })
 
     require('mason').setup({})
     require('mason-lspconfig').setup({
@@ -27,7 +39,7 @@ return {
         'tsserver',
         'pyright'
       },
-      handlers = { lsp_zero.default_setup }
+      handlers = { zero.default_setup }
     })
   end
 }
