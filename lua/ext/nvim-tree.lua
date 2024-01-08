@@ -1,6 +1,11 @@
 return {
   'nvim-tree/nvim-tree.lua',
   dependencies = {
+--------------------------------------------------------------------------------
+-- There are not real dependencies, I'm just lazy :-).
+    'akinsho/bufferline.nvim',
+    'nvim-lualine/lualine.nvim',
+--------------------------------------------------------------------------------
     'nvim-tree/nvim-web-devicons',
   },
 
@@ -9,6 +14,11 @@ return {
   },
 
   config = function ()
+    ----------------------------------------
+    -- initialize status & buffer line
+    require('bufferline').setup()
+    require('lualine').setup()
+    ----------------------------------------
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
 
