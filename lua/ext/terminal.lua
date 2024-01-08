@@ -23,6 +23,6 @@ return {
       persist_mode = true,
       autochdir = true,
     })
-    --vim.keymap.set('n', '<leader>t', '<cmd>ToggleTerm size=8 direction=horizontal<cr>')
+    vim.keymap.set('n', '<leader>t', '<cmd>ToggleTerm size=15 direction=horizontal<cr>')
   end
 }
