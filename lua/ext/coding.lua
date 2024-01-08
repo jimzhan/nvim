@@ -26,8 +26,7 @@ return {
       },
       servers = {
         ['tsserver'] = { 'javascript', 'typescript' },
-        ['pyright'] = { 'python' },
-        ['kotlin_language_server'] = { 'kotlin' }
+        ['pyright'] = { 'python' }
       }
     })
 
@@ -35,7 +34,8 @@ return {
     require('mason-lspconfig').setup({
       ensure_installed = {
         'eslint',
-        'kotlin_language_server',
+        'html',
+        'marksman',
         'tsserver',
         'pyright'
       },
