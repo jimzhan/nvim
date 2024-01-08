@@ -1,8 +1,8 @@
 -----------------------------
 -- NeoVim settings & keymaps 
 -----------------------------
-require 'config.base'
-require 'config.keymap'
+require 'etc.base'
+require 'etc.keymap'
 -----------------------------
 -- Lazy Plugin Manager
 -----------------------------
@@ -20,7 +20,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require 'lazy'.setup({
-  { import = 'plugins' },
+  { import = 'ext' },
   { import = 'themes' }
 })
 -----------------------------
