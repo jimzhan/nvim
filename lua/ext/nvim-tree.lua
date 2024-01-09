@@ -28,6 +28,14 @@ return {
     require('nvim-tree').setup {
       disable_netrw = true,
       hijack_netrw = true,
+      on_attach = function(buffer)
+        require('nvim-tree.api').config.mappings.default_on_attach(buffer)
+        ----------------------------------------
+        -- fix native `M` movement in Vim.
+        -- `M` in `nvim-tree`: Toggle Filter: No Bookmark |nvim-tree-api.tree.toggle_no_bookmark_filter()|
+        ----------------------------------------
+        vim.keymap.del('n', 'M', { buffer = buffer })
+      end,
       actions = {
         open_file = {
           quit_on_open = true,
