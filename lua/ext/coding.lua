@@ -35,9 +35,11 @@ return {
       ensure_installed = {
         'eslint',
         'html',
+        'jsonls',
         'marksman',
+        'pyright',
+        'sqlls',
         'tsserver',
-        'pyright'
       },
       handlers = { zero.default_setup }
     })
