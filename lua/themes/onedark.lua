@@ -3,5 +3,6 @@ return {
 
   config = function()
   	lazy = false
+    require('onedark').load()
   end
 }
