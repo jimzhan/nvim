@@ -2,7 +2,7 @@ return {
   'nvim-tree/nvim-tree.lua',
   dependencies = {
 --------------------------------------------------------------------------------
--- There are not real dependencies, I'm just lazy :-).
+-- These are not real dependencies, I'm just lazy :-).
     'akinsho/bufferline.nvim',
     'nvim-lualine/lualine.nvim',
 --------------------------------------------------------------------------------
@@ -47,7 +47,8 @@ return {
         show_on_open_dirs = true,
       },
       filters = {
-        dotfiles = true,
+        dotfiles = false,
+        git_ignored = false,
       },
       sort_by = 'case_sensitive',
       view = {
