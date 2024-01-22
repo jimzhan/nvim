@@ -21,10 +21,7 @@ return {
     ----------------------------------------
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
-
-    -- Make sure termguicolors are enabled. it's already enabled in options.lua
-    vim.opt.termguicolors = true
-
+    ----------------------------------------
     require('nvim-tree').setup {
       disable_netrw = true,
       hijack_netrw = true,
@@ -53,6 +50,20 @@ return {
       sort_by = 'case_sensitive',
       view = {
         adaptive_size = true,
+      },
+      -- change folder arrow icons
+      renderer = {
+        indent_markers = {
+          enable = true,
+        },
+        icons = {
+          glyphs = {
+            folder = {
+              arrow_closed = "▸", -- arrow when folder is closed
+              arrow_open = "▾", -- arrow when folder is open
+            },
+          },
+        },
       }
     }
   end
