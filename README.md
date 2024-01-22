@@ -3,6 +3,12 @@
 This is my *personal* NeoVim bundle mainly for Mac, but it also works on Linux/Unit with a little tweaks.
 
 
+## Coding
+
+- LSP Integration
+- [Codedium](https://codeium.com/) integration (enabling Codium: `:Codium Auth`)
+
+
 ## Language Supports
 
 - Python
