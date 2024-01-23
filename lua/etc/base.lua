@@ -8,6 +8,7 @@ vim.opt.backspace = 'indent,eol,start' -- backspace works on every char in inser
 vim.opt.completeopt = 'menuone,noselect'
 vim.opt.history = 1000
 vim.opt.startofline = true
+vim.opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 -----------------------------
 -- Mapping waiting time
 -----------------------------
