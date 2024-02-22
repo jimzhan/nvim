@@ -36,7 +36,11 @@ return {
       },
       filters = {
         dotfiles = false,
-        git_ignored = true,
+        git_clean = false,
+        no_buffer = false,
+        custom = {
+          '.git',
+        },
       },
       sort_by = 'case_sensitive',
       view = {
