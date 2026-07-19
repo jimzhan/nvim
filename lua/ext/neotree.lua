@@ -7,6 +7,16 @@ return {
     "nvim-tree/nvim-web-devicons", -- optional, for icons
   },
   opts = {
+    filesystem = {
+      -- Automatically refresh the tree when changes are detected
+      auto_refresh = true,
+      -- Use libuv's native file watcher (experimental but more immediate)
+      use_libuv_file_watcher = true,
+      -- Optional: automatically follow the current buffer's file path
+      follow_current_file = {
+        enabled = true,
+      },
+    },
     -- Disable default mappings; re-define all shortcuts manually to match nvim-tree as closely as possible
     use_default_mappings = false,
     -- Core: define all key mappings
@@ -40,14 +50,6 @@ return {
         ["?"] = "show_help",                -- Show help
       },
     },
-    -- OPTIONAL: specific settings for the filesystem source, for finer control if needed
-    -- filesystem = {
-    --   window = {
-    --     mappings = {
-    --       -- Override or add specific mappings not present in the parent window.mappings
-    --     },
-    --   },
-    -- },
   },
   -- Key binding: use <C-o> to toggle the Neo-tree panel
   keys = {
